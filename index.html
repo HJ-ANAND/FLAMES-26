@@ -102,6 +102,7 @@
 
   <!-- ======= STATS BAR ======= -->
   <section id="stats" class="stats-bar">
+    <div class="stats-bg-sweep" aria-hidden="true"></div>
     <div class="stats-container">
       <div class="stat-item">
         <span class="stat-icon">🔥</span>
@@ -131,6 +132,10 @@
 
   <!-- ======= ABOUT / HIGHLIGHTS ======= -->
   <section id="about" class="section programs-section">
+    <div class="section-bg-glow programs-bg" aria-hidden="true">
+      <div class="sbg-orb sbg-orb--1"></div>
+      <div class="sbg-orb sbg-orb--2"></div>
+    </div>
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">OUR PROGRAMS</span>
@@ -219,6 +224,10 @@
 
   <!-- ======= COURSES SECTION ======= -->
   <section id="courses" class="section courses-section">
+    <div class="section-bg-glow courses-bg" aria-hidden="true">
+      <div class="sbg-scanline"></div>
+      <div class="sbg-corner-glow"></div>
+    </div>
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">CURRICULUM</span>
@@ -257,21 +266,38 @@
               Record System. Zero cost, maximum fire. Perfect for absolute beginners.</p>
             <a href="#" class="btn btn-primary course-enroll-btn" id="enroll-c">Join Free Class</a>
           </div>
-          <div class="burning-scroll" id="scroll-c">
-            <div class="scroll-spine" id="spine-c"></div>
-            <div class="scroll-items" id="items-c">
-              <div class="scroll-item" data-tag="Concept">Introduction to Programming & C Language</div>
-              <div class="scroll-item" data-tag="Concept">Variables, Data Types, and Operators</div>
-              <div class="scroll-item" data-tag="Concept">Control Flow: if/else, switch, loops</div>
-              <div class="scroll-item" data-tag="Concept">Functions and Recursion</div>
-              <div class="scroll-item" data-tag="Concept">Arrays and Strings</div>
-              <div class="scroll-item" data-tag="Concept">Pointers and Memory Management</div>
-              <div class="scroll-item" data-tag="Concept">Structures and Unions</div>
-              <div class="scroll-item" data-tag="Concept">File Handling in C</div>
-              <div class="scroll-item" data-tag="Concept">Dynamic Memory Allocation (malloc, calloc, free)</div>
-              <div class="scroll-item" data-tag="Concept">Bitwise Operations</div>
-              <div class="scroll-item" data-tag="Project">Build a Student Record System in C</div>
-              <div class="scroll-item" data-tag="Assessment">Final Assessment + Certificate</div>
+          <div class="hex-course-wrap" id="hex-c">
+            <div class="hex-header">
+              <span class="hex-header-label">C PROGRAMMING</span>
+              <div class="hex-progress-bar"><div class="hex-progress-fill" id="hex-prog-c" style="width: 33%;"></div></div>
+              <span class="hex-count"><span class="hex-count-done" id="hex-done-c">4</span> / 12</span>
+            </div>
+            <div class="hex-grid" id="hgrid-c">
+              <div class="hex-row">
+                <div class="hex-item done"   data-id="01" data-label="Introduction to Programming &amp; C Language" data-tag="Concept"></div>
+                <div class="hex-item done"   data-id="02" data-label="Variables, Data Types, and Operators"      data-tag="Concept"></div>
+                <div class="hex-item done"   data-id="03" data-label="Control Flow: if/else, switch, loops"      data-tag="Concept"></div>
+              </div>
+              <div class="hex-row hex-row--offset">
+                <div class="hex-item active" data-id="04" data-label="Functions and Recursion"                   data-tag="Concept"></div>
+                <div class="hex-item locked" data-id="05" data-label="Arrays and Strings"                        data-tag="Concept"></div>
+                <div class="hex-item locked" data-id="06" data-label="Pointers and Memory Management"            data-tag="Concept"></div>
+                <div class="hex-item locked" data-id="07" data-label="Structures and Unions"                     data-tag="Concept"></div>
+              </div>
+              <div class="hex-row">
+                <div class="hex-item locked" data-id="08" data-label="File Handling in C"                        data-tag="Concept"></div>
+                <div class="hex-item locked" data-id="09" data-label="Dynamic Memory Allocation"                 data-tag="Concept"></div>
+                <div class="hex-item locked" data-id="10" data-label="Bitwise Operations"                        data-tag="Concept"></div>
+              </div>
+              <div class="hex-row hex-row--center">
+                <div class="hex-item locked project" data-id="11" data-label="Build a Student Record System in C" data-tag="Project"></div>
+                <div class="hex-item locked"         data-id="12" data-label="Final Assessment + Certificate"     data-tag="Assessment"></div>
+              </div>
+            </div>
+            <div class="hex-detail" id="hex-detail-c">
+              <span class="hd-num">04</span>
+              <span class="hd-title">Functions and Recursion</span>
+              <span class="hd-tag hd-tag--concept">Concept</span>
             </div>
           </div>
         </div>
@@ -292,22 +318,38 @@
               dashboards. Taught by DK himself, with love and fire.</p>
             <a href="#" class="btn btn-primary course-enroll-btn" id="enroll-python">Join Free Class</a>
           </div>
-          <div class="burning-scroll" id="scroll-python">
-            <div class="scroll-spine" id="spine-python"></div>
-            <div class="scroll-items" id="items-python">
-              <div class="scroll-item" data-tag="Concept">Python Basics: Syntax, Variables, I/O</div>
-              <div class="scroll-item" data-tag="Concept">Conditionals and Loops</div>
-              <div class="scroll-item" data-tag="Concept">Functions, Scope, and Lambda</div>
-              <div class="scroll-item" data-tag="Concept">Lists, Tuples, Sets, Dictionaries</div>
-              <div class="scroll-item" data-tag="Concept">String Manipulation Deep Dive</div>
-              <div class="scroll-item" data-tag="Concept">File Handling and Exceptions</div>
-              <div class="scroll-item" data-tag="Concept">Object-Oriented Programming in Python</div>
-              <div class="scroll-item" data-tag="Concept">Modules and Packages</div>
-              <div class="scroll-item" data-tag="Workshop">Working with APIs (requests library)</div>
-              <div class="scroll-item" data-tag="Workshop">Data Analysis Intro with Pandas</div>
-              <div class="scroll-item" data-tag="Workshop">Web Scraping Basics with BeautifulSoup</div>
-              <div class="scroll-item" data-tag="Project">Build a Data Dashboard</div>
-              <div class="scroll-item" data-tag="Assessment">Final Assessment + Certificate</div>
+          <div class="hex-course-wrap" id="hex-python">
+            <div class="hex-header">
+              <span class="hex-header-label">PYTHON</span>
+              <div class="hex-progress-bar"><div class="hex-progress-fill" id="hex-prog-python" style="width: 25%;"></div></div>
+              <span class="hex-count"><span class="hex-count-done" id="hex-done-python">3</span> / 12</span>
+            </div>
+            <div class="hex-grid" id="hgrid-python">
+              <div class="hex-row">
+                <div class="hex-item done"   data-id="01" data-label="Python Basics: Syntax, Variables, I/O"     data-tag="Concept"></div>
+                <div class="hex-item done"   data-id="02" data-label="Conditionals and Loops"                    data-tag="Concept"></div>
+                <div class="hex-item done"   data-id="03" data-label="Functions, Scope, and Lambda"              data-tag="Concept"></div>
+              </div>
+              <div class="hex-row hex-row--offset">
+                <div class="hex-item active" data-id="04" data-label="Lists, Tuples, Sets, Dictionaries"         data-tag="Concept"></div>
+                <div class="hex-item locked" data-id="05" data-label="String Manipulation Deep Dive"             data-tag="Concept"></div>
+                <div class="hex-item locked" data-id="06" data-label="File Handling and Exceptions"              data-tag="Concept"></div>
+                <div class="hex-item locked" data-id="07" data-label="Object-Oriented Programming in Python"     data-tag="Concept"></div>
+              </div>
+              <div class="hex-row">
+                <div class="hex-item locked" data-id="08" data-label="Modules and Packages"                      data-tag="Concept"></div>
+                <div class="hex-item locked" data-id="09" data-label="Working with APIs (requests library)"      data-tag="Workshop"></div>
+                <div class="hex-item locked" data-id="10" data-label="Data Analysis Intro with Pandas"           data-tag="Workshop"></div>
+              </div>
+              <div class="hex-row hex-row--center">
+                <div class="hex-item locked" data-id="11" data-label="Web Scraping with BeautifulSoup"           data-tag="Workshop"></div>
+                <div class="hex-item locked project" data-id="12" data-label="Build a Data Dashboard + Certificate" data-tag="Project"></div>
+              </div>
+            </div>
+            <div class="hex-detail" id="hex-detail-python">
+              <span class="hd-num">04</span>
+              <span class="hd-title">Lists, Tuples, Sets, Dictionaries</span>
+              <span class="hd-tag hd-tag--concept">Concept</span>
             </div>
           </div>
         </div>
@@ -328,24 +370,38 @@
               capstone portfolio project. Job-ready in months.</p>
             <a href="#" class="btn btn-primary course-enroll-btn" id="enroll-java">Enroll Now</a>
           </div>
-          <div class="burning-scroll" id="scroll-java">
-            <div class="scroll-spine" id="spine-java"></div>
-            <div class="scroll-items" id="items-java">
-              <div class="scroll-item" data-tag="Concept">Core Java: Syntax, OOP, Classes, Inheritance</div>
-              <div class="scroll-item" data-tag="Concept">Advanced OOP: Abstract, Interfaces, Generics</div>
-              <div class="scroll-item" data-tag="Concept">Exception Handling and Collections Framework</div>
-              <div class="scroll-item" data-tag="Concept">Java 8+ Features (Streams, Lambda, Optional)</div>
-              <div class="scroll-item" data-tag="Concept">Time & Space Complexity Analysis</div>
-              <div class="scroll-item" data-tag="Concept">Arrays, Strings, and Hashing Problems</div>
-              <div class="scroll-item" data-tag="Concept">Linked Lists: Singly, Doubly, Circular</div>
-              <div class="scroll-item" data-tag="Concept">Stacks, Queues, and Dequeues</div>
-              <div class="scroll-item" data-tag="Concept">Trees: Binary, BST, AVL, Segment Trees</div>
-              <div class="scroll-item" data-tag="Concept">Graphs: BFS, DFS, Dijkstra, Topological Sort</div>
-              <div class="scroll-item" data-tag="Concept">Dynamic Programming Patterns (50+ problems)</div>
-              <div class="scroll-item" data-tag="Concept">Sliding Window, Two Pointers, Backtracking</div>
-              <div class="scroll-item" data-tag="Workshop">150+ Curated Interview Problems</div>
-              <div class="scroll-item" data-tag="Workshop">Mock Interviews + Resume Review</div>
-              <div class="scroll-item" data-tag="Project">Capstone Project Portfolio</div>
+          <div class="hex-course-wrap" id="hex-java">
+            <div class="hex-header">
+              <span class="hex-header-label">JAVA + DSA</span>
+              <div class="hex-progress-bar"><div class="hex-progress-fill" id="hex-prog-java" style="width: 17%;"></div></div>
+              <span class="hex-count"><span class="hex-count-done" id="hex-done-java">2</span> / 12</span>
+            </div>
+            <div class="hex-grid" id="hgrid-java">
+              <div class="hex-row">
+                <div class="hex-item done"   data-id="01" data-label="Core Java: Syntax, OOP, Classes, Inheritance"       data-tag="Concept"></div>
+                <div class="hex-item done"   data-id="02" data-label="Advanced OOP: Abstract, Interfaces, Generics"        data-tag="Concept"></div>
+                <div class="hex-item active" data-id="03" data-label="Exception Handling and Collections Framework"        data-tag="Concept"></div>
+              </div>
+              <div class="hex-row hex-row--offset">
+                <div class="hex-item locked" data-id="04" data-label="Java 8+ Features (Streams, Lambda, Optional)"        data-tag="Concept"></div>
+                <div class="hex-item locked" data-id="05" data-label="Time &amp; Space Complexity Analysis"                data-tag="Concept"></div>
+                <div class="hex-item locked" data-id="06" data-label="Arrays, Strings, and Hashing Problems"               data-tag="Concept"></div>
+                <div class="hex-item locked" data-id="07" data-label="Linked Lists: Singly, Doubly, Circular"              data-tag="Concept"></div>
+              </div>
+              <div class="hex-row">
+                <div class="hex-item locked" data-id="08" data-label="Stacks, Queues, and Dequeues"                        data-tag="Concept"></div>
+                <div class="hex-item locked" data-id="09" data-label="Trees: Binary, BST, AVL, Segment Trees"              data-tag="Concept"></div>
+                <div class="hex-item locked" data-id="10" data-label="Graphs: BFS, DFS, Dijkstra, Topological Sort"       data-tag="Concept"></div>
+              </div>
+              <div class="hex-row hex-row--center">
+                <div class="hex-item locked" data-id="11" data-label="Dynamic Programming Patterns (50+ problems)"         data-tag="Concept"></div>
+                <div class="hex-item locked project" data-id="12" data-label="Capstone Project Portfolio"                  data-tag="Project"></div>
+              </div>
+            </div>
+            <div class="hex-detail" id="hex-detail-java">
+              <span class="hd-num">03</span>
+              <span class="hd-title">Exception Handling and Collections Framework</span>
+              <span class="hd-tag hd-tag--concept">Concept</span>
             </div>
           </div>
         </div>
@@ -366,22 +422,38 @@
               AI-powered web application as your capstone. The future is now.</p>
             <a href="#" class="btn btn-primary course-enroll-btn" id="enroll-fullstack">Enroll Now</a>
           </div>
-          <div class="burning-scroll" id="scroll-fullstack">
-            <div class="scroll-spine" id="spine-fullstack"></div>
-            <div class="scroll-items" id="items-fullstack">
-              <div class="scroll-item" data-tag="Concept">HTML5 + CSS3 Mastery</div>
-              <div class="scroll-item" data-tag="Concept">JavaScript ES6+: Promises, Async/Await</div>
-              <div class="scroll-item" data-tag="Concept">React.js: Components, Hooks, State Management</div>
-              <div class="scroll-item" data-tag="Concept">Django Framework: Models, Views, URLs</div>
-              <div class="scroll-item" data-tag="Concept">REST API Design with Django REST Framework</div>
-              <div class="scroll-item" data-tag="Concept">SQL Databases: PostgreSQL Design & Queries</div>
-              <div class="scroll-item" data-tag="Concept">NoSQL with MongoDB</div>
-              <div class="scroll-item" data-tag="Concept">Authentication: JWT, Sessions, OAuth</div>
-              <div class="scroll-item" data-tag="Workshop">ChatGPT API & LLM Integration</div>
-              <div class="scroll-item" data-tag="Workshop">Building AI-Powered Web Features</div>
-              <div class="scroll-item" data-tag="Workshop">WebApp Deployment: AWS/Render/Railway</div>
-              <div class="scroll-item" data-tag="Workshop">Docker Basics and DevOps Intro</div>
-              <div class="scroll-item" data-tag="Project">Capstone: Full Stack AI Web Application</div>
+          <div class="hex-course-wrap" id="hex-fullstack">
+            <div class="hex-header">
+              <span class="hex-header-label">FULL STACK + GENAI</span>
+              <div class="hex-progress-bar"><div class="hex-progress-fill" id="hex-prog-fullstack" style="width: 17%;"></div></div>
+              <span class="hex-count"><span class="hex-count-done" id="hex-done-fullstack">2</span> / 12</span>
+            </div>
+            <div class="hex-grid" id="hgrid-fullstack">
+              <div class="hex-row">
+                <div class="hex-item done"   data-id="01" data-label="HTML5 + CSS3 Mastery"                            data-tag="Concept"></div>
+                <div class="hex-item done"   data-id="02" data-label="JavaScript ES6+: Promises, Async/Await"          data-tag="Concept"></div>
+                <div class="hex-item active" data-id="03" data-label="React.js: Components, Hooks, State Management"   data-tag="Concept"></div>
+              </div>
+              <div class="hex-row hex-row--offset">
+                <div class="hex-item locked" data-id="04" data-label="Django Framework: Models, Views, URLs"            data-tag="Concept"></div>
+                <div class="hex-item locked" data-id="05" data-label="REST API Design with Django REST Framework"       data-tag="Concept"></div>
+                <div class="hex-item locked" data-id="06" data-label="SQL Databases: PostgreSQL Design &amp; Queries"   data-tag="Concept"></div>
+                <div class="hex-item locked" data-id="07" data-label="NoSQL with MongoDB"                               data-tag="Concept"></div>
+              </div>
+              <div class="hex-row">
+                <div class="hex-item locked" data-id="08" data-label="Authentication: JWT, Sessions, OAuth"             data-tag="Concept"></div>
+                <div class="hex-item locked" data-id="09" data-label="ChatGPT API &amp; LLM Integration"               data-tag="Workshop"></div>
+                <div class="hex-item locked" data-id="10" data-label="Building AI-Powered Web Features"                 data-tag="Workshop"></div>
+              </div>
+              <div class="hex-row hex-row--center">
+                <div class="hex-item locked" data-id="11" data-label="WebApp Deployment: AWS/Render/Railway"            data-tag="Workshop"></div>
+                <div class="hex-item locked project" data-id="12" data-label="Capstone: Full Stack AI Web Application"  data-tag="Project"></div>
+              </div>
+            </div>
+            <div class="hex-detail" id="hex-detail-fullstack">
+              <span class="hd-num">03</span>
+              <span class="hd-title">React.js: Components, Hooks, State Management</span>
+              <span class="hd-tag hd-tag--concept">Concept</span>
             </div>
           </div>
         </div>
@@ -402,24 +474,38 @@
               completed cohort that proved the Angaar model works. Your batch comes next.</p>
             <a href="#" class="btn btn-outline course-enroll-btn" id="enroll-flames">View Alumni Network</a>
           </div>
-          <div class="burning-scroll" id="scroll-flames">
-            <div class="scroll-spine" id="spine-flames"></div>
-            <div class="scroll-items" id="items-flames">
-              <div class="scroll-item" data-tag="Workshop">Orientation & Team Formation</div>
-              <div class="scroll-item" data-tag="Concept">Git, GitHub, and Collaboration Workflows</div>
-              <div class="scroll-item" data-tag="Concept">Web Fundamentals: HTML, CSS, JavaScript</div>
-              <div class="scroll-item" data-tag="Concept">Python for Web Development</div>
-              <div class="scroll-item" data-tag="Concept">Django Backend Development</div>
-              <div class="scroll-item" data-tag="Concept">Database Design and Integration</div>
-              <div class="scroll-item" data-tag="Workshop">Frontend: Building Interactive UIs</div>
-              <div class="scroll-item" data-tag="Workshop">API Development and Integration</div>
-              <div class="scroll-item" data-tag="Project">Team Project Kickoff (40+ teams)</div>
-              <div class="scroll-item" data-tag="Workshop">Agile Methodology & Sprint Planning</div>
-              <div class="scroll-item" data-tag="Project">Project Development Sprints (6 weeks)</div>
-              <div class="scroll-item" data-tag="Workshop">Testing, Debugging, Deployment</div>
-              <div class="scroll-item" data-tag="Project">Final Project Presentations</div>
-              <div class="scroll-item" data-tag="Assessment">Certificate Distribution & Recognition</div>
-              <div class="scroll-item" data-tag="Workshop">FLAMES Alumni Network Access</div>
+          <div class="hex-course-wrap" id="hex-flames">
+            <div class="hex-header">
+              <span class="hex-header-label">FLAMES '25</span>
+              <div class="hex-progress-bar"><div class="hex-progress-fill" id="hex-prog-flames" style="width: 42%;"></div></div>
+              <span class="hex-count"><span class="hex-count-done" id="hex-done-flames">5</span> / 12</span>
+            </div>
+            <div class="hex-grid" id="hgrid-flames">
+              <div class="hex-row">
+                <div class="hex-item done"   data-id="01" data-label="Orientation &amp; Team Formation"            data-tag="Workshop"></div>
+                <div class="hex-item done"   data-id="02" data-label="Git, GitHub, and Collaboration Workflows"    data-tag="Concept"></div>
+                <div class="hex-item done"   data-id="03" data-label="Web Fundamentals: HTML, CSS, JavaScript"    data-tag="Concept"></div>
+              </div>
+              <div class="hex-row hex-row--offset">
+                <div class="hex-item done"   data-id="04" data-label="Python for Web Development"                  data-tag="Concept"></div>
+                <div class="hex-item done"   data-id="05" data-label="Django Backend Development"                  data-tag="Concept"></div>
+                <div class="hex-item active" data-id="06" data-label="Database Design and Integration"             data-tag="Concept"></div>
+                <div class="hex-item locked" data-id="07" data-label="Frontend: Building Interactive UIs"          data-tag="Workshop"></div>
+              </div>
+              <div class="hex-row">
+                <div class="hex-item locked" data-id="08" data-label="API Development and Integration"             data-tag="Workshop"></div>
+                <div class="hex-item locked project" data-id="09" data-label="Team Project Kickoff (40+ teams)"    data-tag="Project"></div>
+                <div class="hex-item locked" data-id="10" data-label="Agile Methodology &amp; Sprint Planning"    data-tag="Workshop"></div>
+              </div>
+              <div class="hex-row hex-row--center">
+                <div class="hex-item locked project" data-id="11" data-label="Project Development Sprints (6 weeks)" data-tag="Project"></div>
+                <div class="hex-item locked"         data-id="12" data-label="Final Project Presentations + Certificates" data-tag="Assessment"></div>
+              </div>
+            </div>
+            <div class="hex-detail" id="hex-detail-flames">
+              <span class="hd-num">06</span>
+              <span class="hd-title">Database Design and Integration</span>
+              <span class="hd-tag hd-tag--concept">Concept</span>
             </div>
           </div>
         </div>
@@ -430,6 +516,12 @@
 
   <!-- ======= JOURNEY / MILESTONES ======= -->
   <section id="journey" class="section journey-section">
+    <div class="section-bg-glow journey-bg" aria-hidden="true">
+      <div class="sbg-orb sbg-orb--center"></div>
+      <div class="sbg-shimmer sbg-shimmer--1"></div>
+      <div class="sbg-shimmer sbg-shimmer--2"></div>
+      <div class="sbg-shimmer sbg-shimmer--3"></div>
+    </div>
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">OUR STORY</span>
@@ -519,6 +611,15 @@
 
   <!-- ======= TEAM SECTION ======= -->
   <section id="team" class="section team-section">
+    <div class="section-bg-glow team-bg" aria-hidden="true">
+      <div class="sbg-orb sbg-orb--top-right"></div>
+      <span class="team-ember te-1"></span>
+      <span class="team-ember te-2"></span>
+      <span class="team-ember te-3"></span>
+      <span class="team-ember te-4"></span>
+      <span class="team-ember te-5"></span>
+      <span class="team-ember te-6"></span>
+    </div>
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">THE PEOPLE</span>
@@ -636,6 +737,9 @@
 
   <!-- ======= TESTIMONIALS ======= -->
   <section id="testimonials" class="section testimonials-section">
+    <div class="section-bg-glow testi-bg" aria-hidden="true">
+      <div class="sbg-sweep"></div>
+    </div>
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">STUDENT VOICES</span>
@@ -756,6 +860,10 @@
   <!-- ======= CTA SECTION ======= -->
   <section id="contact" class="cta-section">
     <div class="cta-glow"></div>
+    <div class="section-bg-glow cta-bg" aria-hidden="true">
+      <div class="sbg-orb cta-orb--tl"></div>
+      <div class="sbg-orb cta-orb--br"></div>
+    </div>
     <div class="container">
       <div class="cta-content reveal">
         <h2 class="cta-title">Ready to Burn?</h2>

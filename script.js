@@ -210,8 +210,7 @@ function activateTab(btn) {
   const panel = $(`#panel-${tabId}`);
   if (panel) {
     panel.classList.add('active');
-    // Trigger burning scroll animation
-    setTimeout(() => animateBurningScroll(tabId), 100);
+    // Hex grids are already initialised — nothing to re-trigger
   }
 }
 
@@ -225,59 +224,100 @@ window.addEventListener('load', () => {
   if (activeTab) setTabIndicator(activeTab);
 });
 
-/* ── Burning Scroll Animation ─────────────────────────── */
-function animateBurningScroll(tabId) {
-  const spine = $(`#spine-${tabId}`);
-  const items = $$(`#items-${tabId} .scroll-item`);
+/* ── Honeycomb Hex Grid ──────────────────────────────────── */
+function initHexGrid(panelId) {
+  const wrap = document.getElementById('hex-' + panelId);
+  if (!wrap) return;
 
-  if (!spine) return;
+  const grid   = wrap.querySelector('.hex-grid');
+  const detail = wrap.querySelector('.hex-detail');
+  const items  = grid ? grid.querySelectorAll('.hex-item') : [];
 
-  // Reset
-  spine.classList.remove('grown');
+  // Inject SVG shape and content into each hex
   items.forEach(item => {
-    item.classList.remove('visible');
-    // Rebuild inner content if not already done
-    if (!item.querySelector('.scroll-item-text')) {
-      const text   = item.textContent.trim();
-      const tag    = item.dataset.tag || '';
-      item.innerHTML = '';
-      const textEl = document.createElement('span');
-      textEl.className = 'scroll-item-text';
-      textEl.textContent = text;
-      const tagEl  = document.createElement('span');
-      tagEl.className   = 'scroll-tag';
-      tagEl.textContent = tag;
-      item.appendChild(textEl);
-      item.appendChild(tagEl);
+    const id    = item.dataset.id    || '';
+    const label = item.dataset.label || '';
+
+    // Truncate label for display (max ~3 words)
+    const words      = label.split(' ');
+    const shortLabel = words.slice(0, 3).join(' ') + (words.length > 3 ? '…' : '');
+
+    item.innerHTML = `
+      <svg class="hex-svg" viewBox="0 0 76 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="hex-polygon"
+          points="38,4 72,23 72,65 38,84 4,65 4,23"
+          stroke-width="${item.classList.contains('active') ? '2' : '1.5'}" />
+      </svg>
+      <div class="hex-content">
+        <span class="hex-num">${id}</span>
+        <span class="hex-label-text">${shortLabel}</span>
+      </div>
+    `;
+
+    // Click handler — only non-locked hexes are interactive
+    if (!item.classList.contains('locked')) {
+      item.addEventListener('click', () => {
+        selectHex(item, detail);
+      });
     }
   });
 
-  // Grow spine
-  requestAnimationFrame(() => {
-    spine.classList.add('grown');
-  });
+  // Auto-select the active hex on load
+  const activeHex = grid ? grid.querySelector('.hex-item.active') : null;
+  if (activeHex) selectHex(activeHex, detail);
+  else {
+    // Fall back to first done hex if no active
+    const firstDone = grid ? grid.querySelector('.hex-item.done') : null;
+    if (firstDone) selectHex(firstDone, detail);
+  }
+}
 
-  // Stagger items
-  items.forEach((item, i) => {
-    setTimeout(() => item.classList.add('visible'), 200 + i * 80);
+function selectHex(item, detail) {
+  if (!detail) return;
+  const id    = item.dataset.id    || '';
+  const label = item.dataset.label || '';
+  const tag   = (item.dataset.tag  || 'Concept').toLowerCase();
+  const done  = item.classList.contains('done');
+
+  const tagLabel = done ? '✓ Done' : item.dataset.tag || 'Concept';
+  const tagClass = done ? 'hd-tag--assessment'
+    : tag === 'project'    ? 'hd-tag--project'
+    : tag === 'workshop'   ? 'hd-tag--workshop'
+    : tag === 'assessment' ? 'hd-tag--assessment'
+    : 'hd-tag--concept';
+
+  detail.innerHTML = `
+    <span class="hd-num">${id}</span>
+    <span class="hd-title">${label}</span>
+    <span class="hd-tag ${tagClass}">${tagLabel}</span>
+  `;
+
+  // Brief flash animation on the panel
+  detail.style.borderColor = 'rgba(255,107,26,0.5)';
+  setTimeout(() => { detail.style.borderColor = ''; }, 300);
+}
+
+// Initialise all 5 grids on page load
+['c', 'python', 'java', 'fullstack', 'flames'].forEach(id => initHexGrid(id));
+
+/* ── Section Background Parallax ───────────────────────────── */
+const sectionOrbs = document.querySelectorAll('.sbg-orb');
+
+function updateSectionParallax() {
+  if (window.innerWidth < 768) return; // disabled on mobile
+  sectionOrbs.forEach(orb => {
+    const section = orb.closest('section');
+    if (!section) return;
+    const rect = section.getBoundingClientRect();
+    const sectionCenter = rect.top + rect.height / 2;
+    const viewCenter    = window.innerHeight / 2;
+    const offset        = (sectionCenter - viewCenter) * 0.06;
+    // Apply translateY on top of the CSS animation via parent wrapper
+    orb.parentElement.style.transform = `translateY(${offset}px)`;
   });
 }
 
-// Init first panel on page load
-setTimeout(() => animateBurningScroll('c'), 500);
-
-// Also trigger when the courses section enters view
-const coursesSection = $('#courses');
-const coursesObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const activeTab = document.querySelector('.tab-btn.active');
-      if (activeTab) animateBurningScroll(activeTab.dataset.tab);
-      coursesObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.2 });
-if (coursesSection) coursesObs.observe(coursesSection);
+window.addEventListener('scroll', updateSectionParallax, { passive: true });
 
 /* ── Marquee Duplication ─────────────────────────────── */
 function duplicateMarquee(trackId) {
