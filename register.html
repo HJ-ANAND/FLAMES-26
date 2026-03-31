@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Register for The Angaar Batch — join 13,000+ students on their path to ignite their coding journey." />
+  <title>Register | The Angaar Batch 🔥</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Variables ─────────────────────────── */
+    :root {
+      --bg-primary:    #0a0a0a;
+      --bg-secondary:  #111111;
+      --bg-card:       #141414;
+      --ember-orange:  #FF6B1A;
+      --molten-gold:   #FFB347;
+      --flame-yellow:  #FFD700;
+      --ash-grey:      #3a3a3a;
+      --text-primary:  #F5F0E8;
+      --text-secondary:#B0A090;
+      --border-ember:  rgba(255,107,26,0.25);
+      --glow-orange:   rgba(255,107,26,0.3);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lora', serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Noise grain */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      opacity: 0.35;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Keyframes ─────────────────────────── */
+    @keyframes slideUpFade {
+      from { opacity:0; transform:translateY(24px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    @keyframes flicker {
+      0%,100% { opacity:1; transform:scaleY(1); }
+      40%     { opacity:.8; transform:scaleY(.96) scaleX(1.02); }
+      70%     { opacity:.9; transform:scaleY(1.03) scaleX(.98); }
+    }
+    @keyframes glowPulse {
+      0%,100% { box-shadow: 0 0 10px rgba(255,107,26,.25); }
+      50%     { box-shadow: 0 0 28px rgba(255,107,26,.55), 0 0 55px rgba(255,107,26,.2); }
+    }
+    @keyframes particleDrift {
+      from { transform: translateY(0) translateX(0); opacity:.6; }
+      to   { transform: translateY(-120vh) translateX(30px); opacity:0; }
+    }
+    @keyframes spineScan {
+      0%   { top: 0; opacity:1; }
+      100% { top: 100%; opacity:0; }
+    }
+
+    /* ── PARTICLES ─────────────────────────── */
+    canvas#reg-canvas {
+      position: fixed; inset: 0;
+      width:100%; height:100%;
+      z-index: 0; pointer-events: none;
+    }
+
+    /* ── NAVBAR ─────────────────────────────── */
+    .reg-nav {
+      position: fixed; top:0; left:0; right:0; z-index:100;
+      background: rgba(10,10,10,.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-ember);
+      height: 68px;
+      display: flex; align-items: center;
+    }
+    .reg-nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+      width: 100%;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .reg-nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 24px; letter-spacing: .04em;
+      color: var(--flame-yellow);
+      text-shadow: 0 0 18px rgba(255,215,0,.4);
+      transition: text-shadow .3s;
+    }
+    .reg-nav-logo:hover { text-shadow: 0 0 30px rgba(255,215,0,.7); }
+    .reg-back-link {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 14px; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-secondary);
+      transition: color .3s;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .reg-back-link:hover { color: var(--ember-orange); }
+
+    /* ── PAGE LAYOUT ─────────────────────────── */
+    .reg-page {
+      position: relative; z-index: 1;
+      min-height: 100vh;
+      display: flex; align-items: stretch;
+      padding-top: 68px;
+    }
+
+    /* Left panel */
+    .reg-panel-left {
+      flex: 0 0 42%;
+      background: linear-gradient(160deg, #0f0a06 0%, #0a0a0a 60%, #101008 100%);
+      border-right: 1px solid var(--border-ember);
+      padding: 64px 52px;
+      display: flex; flex-direction: column; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .reg-panel-left::before {
+      content: '';
+      position: absolute; top:0; left:0; right:0; bottom:0;
+      background: radial-gradient(ellipse at 20% 30%, rgba(255,107,26,.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .reg-left-content { position: relative; z-index: 1; }
+
+    .reg-eyebrow {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: .35em; text-transform: uppercase;
+      color: var(--ember-orange); margin-bottom: 20px;
+      opacity: 0; animation: slideUpFade .6s ease forwards .2s;
+    }
+    .reg-heading {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(52px, 6vw, 84px);
+      line-height: 1; letter-spacing: .03em;
+      color: var(--text-primary); margin-bottom: 8px;
+      opacity: 0; animation: slideUpFade .6s ease forwards .4s;
+    }
+    .reg-heading span {
+      color: var(--flame-yellow);
+      text-shadow: 0 0 30px rgba(255,215,0,.5), 0 0 60px rgba(255,107,26,.25);
+      display: inline-block;
+      animation: flicker 2.5s ease-in-out infinite;
+    }
+    .reg-subheading {
+      font-family: 'Lora', serif; font-style: italic;
+      font-size: 17px; color: var(--text-secondary);
+      line-height: 1.7; margin-bottom: 40px;
+      opacity: 0; animation: slideUpFade .6s ease forwards .6s;
+    }
+
+    /* Benefits list */
+    .reg-benefits {
+      list-style: none; display: flex; flex-direction: column; gap: 14px;
+      opacity: 0; animation: slideUpFade .6s ease forwards .8s;
+    }
+    .reg-benefit {
+      display: flex; align-items: flex-start; gap: 14px;
+    }
+    .benefit-dot {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(255,107,26,.12);
+      border: 1px solid var(--border-ember);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; flex-shrink: 0; margin-top: 2px;
+    }
+    .benefit-text {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 15px; font-weight: 500;
+      color: var(--text-secondary); line-height: 1.5;
+    }
+    .benefit-text strong { color: var(--text-primary); font-weight: 700; }
+
+    /* Stats strip */
+    .reg-stats-strip {
+      display: flex; gap: 0;
+      margin-top: 48px; padding-top: 32px;
+      border-top: 1px solid var(--border-ember);
+      opacity: 0; animation: slideUpFade .6s ease forwards 1s;
+    }
+    .reg-stat {
+      flex: 1; text-align: center;
+      padding: 0 8px;
+    }
+    .reg-stat + .reg-stat { border-left: 1px solid var(--ash-grey); }
+    .reg-stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px; color: var(--ember-orange);
+      display: block; line-height: 1;
+    }
+    .reg-stat-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-secondary);
+      display: block; margin-top: 4px;
+    }
+
+    /* Right panel — form */
+    .reg-panel-right {
+      flex: 1;
+      background: var(--bg-secondary);
+      padding: 64px 52px;
+      display: flex; flex-direction: column; justify-content: center;
+      position: relative;
+    }
+    .reg-panel-right::before {
+      content: '';
+      position: absolute; top:0; right:0; width:500px; height:500px;
+      background: radial-gradient(ellipse at 80% 20%, rgba(255,107,26,.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .reg-form-wrap {
+      position: relative; z-index: 1;
+      max-width: 520px; width: 100%;
+      opacity: 0; animation: slideUpFade .7s ease forwards .5s;
+    }
+
+    .reg-form-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 36px; letter-spacing: .04em;
+      color: var(--text-primary); margin-bottom: 6px;
+    }
+    .reg-form-subtitle {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 14px; font-weight: 500;
+      color: var(--text-secondary); margin-bottom: 36px;
+      letter-spacing: .04em;
+    }
+    .reg-form-subtitle span { color: var(--ember-orange); }
+
+    /* Form groups */
+    .form-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 16px; margin-bottom: 16px;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 7px; }
+    .form-group.full-width { grid-column: span 2; }
+    .form-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: .15em; text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border-ember);
+      border-radius: 8px;
+      padding: 13px 16px;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 15px; font-weight: 500;
+      color: var(--text-primary);
+      transition: border-color .3s, box-shadow .3s;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .form-input::placeholder,
+    .form-select option[value=""] { color: var(--ash-grey); }
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--ember-orange);
+      box-shadow: 0 0 0 3px rgba(255,107,26,.12);
+    }
+    .form-select {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B0A090' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+    }
+    .form-select option {
+      background: var(--bg-card);
+      color: var(--text-primary);
+    }
+    .form-textarea {
+      resize: vertical; min-height: 90px;
+      font-family: 'Lora', serif; font-size: 14px;
+    }
+
+    /* Course selector — custom pill checkboxes */
+    .course-picker { display: flex; flex-wrap: wrap; gap: 10px; }
+    .course-pill {
+      position: relative;
+    }
+    .course-pill input[type="checkbox"] {
+      position: absolute; opacity: 0; width: 0; height: 0;
+    }
+    .course-pill label {
+      display: flex; align-items: center; gap: 8px;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 13px; font-weight: 600;
+      letter-spacing: .06em; text-transform: uppercase;
+      color: var(--text-secondary);
+      padding: 8px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-ember);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all .3s;
+      user-select: none;
+    }
+    .course-pill label .pill-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--ash-grey); transition: background .3s, box-shadow .3s;
+    }
+    .course-pill input:checked + label {
+      border-color: var(--ember-orange);
+      color: var(--text-primary);
+      background: rgba(255,107,26,.08);
+    }
+    .course-pill input:checked + label .pill-dot {
+      background: var(--ember-orange);
+      box-shadow: 0 0 6px rgba(255,107,26,.6);
+    }
+    .course-pill label:hover {
+      border-color: var(--molten-gold);
+      color: var(--text-primary);
+    }
+
+    /* Submit button */
+    .reg-submit-row { margin-top: 24px; display: flex; flex-direction: column; gap: 14px; }
+    .reg-submit-btn {
+      width: 100%;
+      padding: 17px 32px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px; letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #0a0a0a;
+      background: var(--ember-orange);
+      border: 2px solid var(--ember-orange);
+      border-radius: 8px;
+      cursor: pointer;
+      position: relative; overflow: hidden;
+      transition: all .35s cubic-bezier(.23,1,.32,1);
+      animation: glowPulse 3s ease-in-out infinite;
+    }
+    .reg-submit-btn::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.15) 50%, transparent 100%);
+      transform: translateX(-100%);
+      transition: transform .5s ease;
+    }
+    .reg-submit-btn:hover {
+      background: var(--molten-gold);
+      border-color: var(--molten-gold);
+      box-shadow: 0 0 40px rgba(255,107,26,.5), 0 8px 28px rgba(255,107,26,.3);
+      transform: translateY(-2px);
+    }
+    .reg-submit-btn:hover::before { transform: translateX(100%); }
+    .reg-submit-btn:active { transform: translateY(0); }
+
+    .reg-privacy {
+      font-family: 'Lora', serif; font-style: italic;
+      font-size: 12px; color: var(--ash-grey);
+      text-align: center; line-height: 1.6;
+    }
+    .reg-privacy a { color: var(--ember-orange); transition: color .3s; }
+    .reg-privacy a:hover { color: var(--flame-yellow); }
+
+    /* ── SUCCESS STATE ─────────────────────── */
+    .reg-success {
+      display: none;
+      flex-direction: column; align-items: center;
+      text-align: center; gap: 20px;
+      padding: 48px 24px;
+    }
+    .reg-success.visible { display: flex; animation: slideUpFade .6s ease; }
+    .success-flame { font-size: 72px; animation: flicker 2s ease-in-out infinite; }
+    .success-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 52px; letter-spacing: .04em;
+      color: var(--flame-yellow);
+      text-shadow: 0 0 30px rgba(255,215,0,.5);
+    }
+    .success-sub {
+      font-family: 'Lora', serif; font-style: italic;
+      font-size: 17px; color: var(--text-secondary);
+      max-width: 400px; line-height: 1.7;
+    }
+    .success-back {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 15px; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--ember-orange);
+      padding: 12px 28px;
+      border: 2px solid var(--ember-orange);
+      border-radius: 6px;
+      transition: all .3s;
+      display: inline-block; margin-top: 8px;
+    }
+    .success-back:hover {
+      background: var(--ember-orange);
+      color: #0a0a0a;
+    }
+
+    /* ── MOBILE ──────────────────────────────── */
+    @media (max-width: 900px) {
+      .reg-page { flex-direction: column; }
+      .reg-panel-left { flex: none; padding: 48px 28px 40px; border-right: none; border-bottom: 1px solid var(--border-ember); }
+      .reg-panel-right { padding: 40px 28px 60px; }
+      .reg-heading { font-size: clamp(48px, 12vw, 72px); }
+    }
+    @media (max-width: 600px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .form-group.full-width { grid-column: auto; }
+      .reg-panel-left { padding: 40px 20px; }
+      .reg-panel-right { padding: 36px 20px 56px; }
+    }
+
+    /* ── Reduced motion ──────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="reg-canvas"></canvas>
+
+  <!-- NAVBAR -->
+  <nav class="reg-nav">
+    <div class="reg-nav-inner">
+      <a href="index.html" class="reg-nav-logo">🔥 ANGAAR</a>
+      <a href="index.html" class="reg-back-link">← Back to Home</a>
+    </div>
+  </nav>
+
+  <!-- PAGE -->
+  <div class="reg-page">
+
+    <!-- LEFT PANEL -->
+    <div class="reg-panel-left">
+      <div class="reg-left-content">
+        <p class="reg-eyebrow">— Join the Movement —</p>
+        <h1 class="reg-heading">Light Your <span>ANGAAR</span></h1>
+        <p class="reg-subheading">
+          One form. One decision. A lifetime of fire.
+          Join 13,000+ students who chose to ignite their future.
+        </p>
+
+        <ul class="reg-benefits">
+          <li class="reg-benefit">
+            <div class="benefit-dot">🔥</div>
+            <div class="benefit-text"><strong>Free C & Python</strong> live classes via WhatsApp — zero cost, maximum learning.</div>
+          </li>
+          <li class="reg-benefit">
+            <div class="benefit-dot">⚡</div>
+            <div class="benefit-text"><strong>FLARE 1.0</strong> — intensive Java+DSA and Full Stack+GenAI for the job-ready you.</div>
+          </li>
+          <li class="reg-benefit">
+            <div class="benefit-dot">🎓</div>
+            <div class="benefit-text"><strong>Campus workshops</strong> at IIT Delhi, DTU, NSUT, GLA, and 50+ more colleges.</div>
+          </li>
+          <li class="reg-benefit">
+            <div class="benefit-dot">🏆</div>
+            <div class="benefit-text"><strong>Certified projects</strong> — build real things and get recognized for them.</div>
+          </li>
+          <li class="reg-benefit">
+            <div class="benefit-dot">🤝</div>
+            <div class="benefit-text"><strong>Peer community</strong> — Angaar alumni network for life.</div>
+          </li>
+        </ul>
+
+        <div class="reg-stats-strip">
+          <div class="reg-stat">
+            <span class="reg-stat-num">13K+</span>
+            <span class="reg-stat-label">Students</span>
+          </div>
+          <div class="reg-stat">
+            <span class="reg-stat-num">4.8/5</span>
+            <span class="reg-stat-label">Rating</span>
+          </div>
+          <div class="reg-stat">
+            <span class="reg-stat-num">50+</span>
+            <span class="reg-stat-label">Colleges</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL — FORM -->
+    <div class="reg-panel-right">
+      <div class="reg-form-wrap" id="form-wrap">
+        <h2 class="reg-form-title">Register Now</h2>
+        <p class="reg-form-subtitle">Takes <span>60 seconds</span>. Lasts a lifetime.</p>
+
+        <form id="reg-form" novalidate>
+          <div class="form-grid">
+            <!-- Full Name -->
+            <div class="form-group">
+              <label class="form-label" for="reg-name">Full Name *</label>
+              <input class="form-input" type="text" id="reg-name" name="name" placeholder="Your name" required autocomplete="name" />
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label class="form-label" for="reg-email">Email Address *</label>
+              <input class="form-input" type="email" id="reg-email" name="email" placeholder="you@email.com" required autocomplete="email" />
+            </div>
+
+            <!-- Phone -->
+            <div class="form-group">
+              <label class="form-label" for="reg-phone">WhatsApp Number *</label>
+              <input class="form-input" type="tel" id="reg-phone" name="phone" placeholder="+91 XXXXX XXXXX" required autocomplete="tel" />
+            </div>
+
+            <!-- Year -->
+            <div class="form-group">
+              <label class="form-label" for="reg-year">Current Year *</label>
+              <select class="form-select" id="reg-year" name="year" required>
+                <option value="">Select Year</option>
+                <option value="1">1st Year</option>
+                <option value="2">2nd Year</option>
+                <option value="3">3rd Year</option>
+                <option value="4">4th Year</option>
+                <option value="grad">Graduated/Working</option>
+              </select>
+            </div>
+
+            <!-- College -->
+            <div class="form-group full-width">
+              <label class="form-label" for="reg-college">College / University *</label>
+              <input class="form-input" type="text" id="reg-college" name="college" placeholder="e.g. DTU, NSUT, GLA University..." required autocomplete="organization" />
+            </div>
+
+            <!-- Branch -->
+            <div class="form-group">
+              <label class="form-label" for="reg-branch">Branch / Stream</label>
+              <select class="form-select" id="reg-branch" name="branch">
+                <option value="">Select Branch</option>
+                <option value="cs">Computer Science</option>
+                <option value="it">Information Technology</option>
+                <option value="ece">Electronics (ECE)</option>
+                <option value="mech">Mechanical</option>
+                <option value="civil">Civil</option>
+                <option value="mba">MBA / Management</option>
+                <option value="bca">BCA / MCA</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <!-- City -->
+            <div class="form-group">
+              <label class="form-label" for="reg-city">City</label>
+              <input class="form-input" type="text" id="reg-city" name="city" placeholder="e.g. Delhi, Noida, Lucknow" autocomplete="address-level2" />
+            </div>
+
+            <!-- Course Interest -->
+            <div class="form-group full-width">
+              <label class="form-label">I'm Interested In *</label>
+              <div class="course-picker" id="course-picker">
+                <div class="course-pill">
+                  <input type="checkbox" id="cp-c" name="course" value="c-programming" />
+                  <label for="cp-c"><span class="pill-dot"></span>C Programming (Free)</label>
+                </div>
+                <div class="course-pill">
+                  <input type="checkbox" id="cp-py" name="course" value="python" />
+                  <label for="cp-py"><span class="pill-dot"></span>Python (Free)</label>
+                </div>
+                <div class="course-pill">
+                  <input type="checkbox" id="cp-java" name="course" value="java-dsa" />
+                  <label for="cp-java"><span class="pill-dot"></span>Java + DSA (FLARE)</label>
+                </div>
+                <div class="course-pill">
+                  <input type="checkbox" id="cp-fs" name="course" value="fullstack-genai" />
+                  <label for="cp-fs"><span class="pill-dot"></span>Full Stack + GenAI (FLARE)</label>
+                </div>
+                <div class="course-pill">
+                  <input type="checkbox" id="cp-ws" name="course" value="workshop" />
+                  <label for="cp-ws"><span class="pill-dot"></span>Campus Workshop</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group full-width">
+              <label class="form-label" for="reg-msg">Anything to share? <span style="color:var(--ash-grey);font-weight:400;">(optional)</span></label>
+              <textarea class="form-textarea" id="reg-msg" name="message" placeholder="Tell us about your goals, or how you heard about Angaar..."></textarea>
+            </div>
+          </div>
+
+          <!-- Error message -->
+          <div id="form-error" style="display:none; font-family:'Rajdhani',sans-serif; font-size:14px; color:#e74c3c; margin-bottom:12px; padding:12px 16px; background:rgba(231,76,60,.08); border:1px solid rgba(231,76,60,.2); border-radius:6px;"></div>
+
+          <div class="reg-submit-row">
+            <button type="submit" class="reg-submit-btn" id="reg-submit-btn">
+              Ignite My Journey 🔥
+            </button>
+            <p class="reg-privacy">
+              By registering, you agree to receive updates from The Angaar Batch.<br />
+              We never spam. Pinky promise. Contact us at <a href="mailto:team@theangaarbatch.in">team@theangaarbatch.in</a>
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <!-- Success State -->
+      <div class="reg-success" id="reg-success">
+        <div class="success-flame">🔥</div>
+        <div class="success-title">You're In!</div>
+        <p class="success-sub">Welcome to the Angaar family. Our team will reach out on WhatsApp within 24 hours. Get ready to burn.</p>
+        <a href="index.html" class="success-back">← Back to Home</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    'use strict';
+
+    /* ── Particle canvas ───────────────────── */
+    const canvas = document.getElementById('reg-canvas');
+    const ctx    = canvas.getContext('2d');
+    const COLORS = ['#FF6B1A','#FFB347','#FFD700','#FF8C42'];
+    let   particles = [];
+
+    function resize() {
+      canvas.width  = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', () => { resize(); init(); }, { passive: true });
+
+    function mkParticle(bottom = false) {
+      return {
+        x: Math.random() * canvas.width,
+        y: bottom ? canvas.height + 10 : Math.random() * canvas.height,
+        r: Math.random() * 1.8 + 0.4,
+        speed: Math.random() * 1.2 + 0.3,
+        drift: (Math.random() - 0.5) * 0.3,
+        life: 0, maxLife: Math.random() * 180 + 80,
+        maxOpacity: Math.random() * 0.5 + 0.15,
+        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+      };
+    }
+    function init() { particles = Array.from({length: 50}, () => mkParticle(false)); }
+    init();
+
+    function tick() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((p, i) => {
+        p.y -= p.speed; p.x += p.drift; p.life++;
+        const opacity = p.maxOpacity * (1 - p.life / p.maxLife);
+        if (opacity <= 0.01 || p.y < -10) { particles[i] = mkParticle(true); return; }
+        ctx.save();
+        ctx.globalAlpha = opacity;
+        ctx.shadowBlur = 5; ctx.shadowColor = p.color;
+        ctx.fillStyle = p.color;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
+        ctx.restore();
+      });
+      requestAnimationFrame(tick);
+    }
+    tick();
+
+    /* ── Form logic ────────────────────────── */
+    const form      = document.getElementById('reg-form');
+    const formWrap  = document.getElementById('form-wrap');
+    const success   = document.getElementById('reg-success');
+    const errBox    = document.getElementById('form-error');
+    const submitBtn = document.getElementById('reg-submit-btn');
+
+    function showError(msg) {
+      errBox.textContent = msg;
+      errBox.style.display = 'block';
+      errBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    function clearError() { errBox.style.display = 'none'; }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      clearError();
+
+      // Validation
+      const name    = document.getElementById('reg-name').value.trim();
+      const email   = document.getElementById('reg-email').value.trim();
+      const phone   = document.getElementById('reg-phone').value.trim();
+      const year    = document.getElementById('reg-year').value;
+      const college = document.getElementById('reg-college').value.trim();
+      const courses = [...document.querySelectorAll('#course-picker input:checked')];
+
+      if (!name)    return showError('Please enter your full name.');
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+                    return showError('Please enter a valid email address.');
+      if (!phone || phone.replace(/\D/g,'').length < 10)
+                    return showError('Please enter a valid 10-digit WhatsApp number.');
+      if (!year)    return showError('Please select your current year.');
+      if (!college) return showError('Please enter your college/university name.');
+      if (courses.length === 0)
+                    return showError('Please select at least one program you\'re interested in.');
+
+      // Simulate submission
+      submitBtn.textContent = 'Igniting... 🔥';
+      submitBtn.disabled = true;
+
+      setTimeout(() => {
+        // Hide form, show success
+        formWrap.style.opacity = '0';
+        formWrap.style.transform = 'translateY(-20px)';
+        formWrap.style.transition = 'opacity .4s, transform .4s';
+        setTimeout(() => {
+          formWrap.style.display = 'none';
+          success.classList.add('visible');
+        }, 400);
+      }, 1200);
+    });
+
+    // Input highlight on focus
+    document.querySelectorAll('.form-input, .form-select, .form-textarea').forEach(el => {
+      el.addEventListener('focus', () => clearError());
+    });
+  </script>
+</body>
+</html>

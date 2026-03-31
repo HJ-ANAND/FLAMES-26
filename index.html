@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="The Angaar Batch — India's most passionate student coding community. Free live coding classes, intensive FLARE courses, and campus workshops. 13,000+ students trained." />
+  <title>The Angaar Batch 🔥 | Ignite Your Angaar</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ======= NAVBAR ======= -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" id="nav-logo">🔥 FLAMES'26</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#courses" class="nav-link">Courses</a></li>
+        <li><a href="#team" class="nav-link">Team</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="register.html" class="btn btn-outline nav-cta" id="nav-cta">Register Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+      <button class="drawer-close" id="drawer-close" aria-label="Close menu">✕</button>
+      <ul class="drawer-links">
+        <li><a href="#hero" class="drawer-link">Home</a></li>
+        <li><a href="#about" class="drawer-link">About</a></li>
+        <li><a href="#courses" class="drawer-link">Courses</a></li>
+        <li><a href="#team" class="drawer-link">Team</a></li>
+        <li><a href="#contact" class="drawer-link">Contact</a></li>
+      </ul>
+      <a href="register.html" class="btn btn-primary drawer-cta">Register Now</a>
+    </div>
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+  </nav>
+
+  <!-- ======= HERO SECTION ======= -->
+  <section id="hero" class="hero-section">
+    <!-- Background Layers -->
+    <canvas id="particles-canvas" class="particles-canvas"></canvas>
+    <div class="hero-glow-top"></div>
+    <div class="hero-glow-bottom"></div>
+    <div class="hero-smoke hero-smoke--1"></div>
+    <div class="hero-smoke hero-smoke--2"></div>
+    <div class="noise-overlay"></div>
+
+    <!-- Hero Content -->
+    <div class="hero-content" id="hero-content">
+      <span class="hero-label reveal-hero" id="hero-label">— EST. 2023 —</span>
+
+      <h1 class="hero-title">
+        <span class="hero-line-1 reveal-hero" id="hero-line-1">IGNITE YOUR</span>
+        <span class="hero-line-2 reveal-hero" id="hero-line-2">Coding Journey<span class="fire-emoji">🔥</span></span>
+      </h1>
+
+      <p class="hero-tagline reveal-hero" id="hero-tagline">
+        Learn. Build. Lead. — Because ordinary was never the plan.
+      </p>
+      <p class="hero-hindi reveal-hero" id="hero-hindi">
+        "Agar Angaar hai tere houslo me, to bas dekhke mat ja... Seekh... or laga de..."
+      </p>
+
+      <div class="hero-buttons reveal-hero" id="hero-buttons">
+        <a href="#about" class="btn btn-primary" id="btn-explore">Explore Programs</a>
+        <a href="#courses" class="btn btn-outline" id="btn-join">Join Free Classes</a>
+      </div>
+
+      <div class="scroll-indicator reveal-hero" id="scroll-indicator">
+        <div class="scroll-flame">
+          <svg width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg"
+            class="flame-svg">
+            <path d="M12 2C12 2 7 8 7 14C7 17.866 9.134 21 12 22C14.866 21 17 17.866 17 14C17 8 12 2 12 2Z"
+              fill="#FF6B1A" opacity="0.9" />
+            <path d="M12 8C12 8 9 12 9 15.5C9 17.985 10.343 20 12 20.5C13.657 20 15 17.985 15 15.5C15 12 12 8 12 8Z"
+              fill="#FFD700" opacity="0.8" />
+            <path
+              d="M12 14C12 14 10.5 16 10.5 17.5C10.5 19.157 11.172 20.5 12 20.5C12.828 20.5 13.5 19.157 13.5 17.5C13.5 16 12 14 12 14Z"
+              fill="white" opacity="0.6" />
+          </svg>
+        </div>
+        <span class="scroll-text">Scroll to burn further</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= STATS BAR ======= -->
+  <section id="stats" class="stats-bar">
+    <div class="stats-container">
+      <div class="stat-item">
+        <span class="stat-icon">🔥</span>
+        <span class="stat-number" data-target="13000" data-suffix="+">0</span>
+        <span class="stat-label">Students Trained</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-icon">⚡</span>
+        <span class="stat-number" data-target="400" data-suffix="+">0</span>
+        <span class="stat-label">Projects Completed</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-icon">🎓</span>
+        <span class="stat-number" data-target="50" data-suffix="+">0</span>
+        <span class="stat-label">Partner Colleges</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-icon">⭐</span>
+        <span class="stat-number" data-target="4.8" data-suffix="/5" data-decimal="1">0</span>
+        <span class="stat-label">Overall Rating</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= ABOUT / HIGHLIGHTS ======= -->
+  <section id="about" class="section programs-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">OUR PROGRAMS</span>
+        <h2 class="section-title">What Burns Inside Angaar</h2>
+        <p class="section-subtitle">Five fires we've lit for you</p>
+      </div>
+
+      <div class="cards-grid">
+        <!-- Card 1: FLAMES '25 -->
+        <div class="program-card reveal" id="card-flames">
+          <div class="card-icon-wrap">
+            <span class="card-icon">🔥</span>
+          </div>
+          <div class="card-badge card-badge--success">COMPLETED</div>
+          <h3 class="card-title">FLAMES '25</h3>
+          <p class="card-subtitle">Summer Training Program</p>
+          <p class="card-body">A transformative 3-month journey where 400+ students learned, built real projects, and
+            leveled up together. India's most passionate student coding cohort.</p>
+          <div class="card-stats-row">
+            <span class="mini-stat">400+ Students</span>
+            <span class="mini-stat">40+ Projects</span>
+            <span class="mini-stat">4.8★ Rating</span>
+          </div>
+          <a href="#" class="card-link">Verify Certificate →</a>
+        </div>
+
+        <!-- Card 2: FLARE 1.0 -->
+        <div class="program-card reveal" id="card-flare">
+          <div class="card-icon-wrap">
+            <span class="card-icon">⚡</span>
+          </div>
+          <div class="card-badge card-badge--active">ENROLLING NOW</div>
+          <h3 class="card-title">FLARE 1.0</h3>
+          <p class="card-subtitle">Paid Intensive Courses</p>
+          <p class="card-body">Industry-vetted courses designed to make you job-ready in months. Java+DSA and Full
+            Stack+GenAI — taught by mentors who've done it themselves.</p>
+          <div class="card-price">Starting ₹1,999</div>
+          <a href="#courses" class="card-link">Explore Courses →</a>
+        </div>
+
+        <!-- Card 3: C Programming -->
+        <div class="program-card reveal" id="card-c">
+          <div class="card-icon-wrap">
+            <span class="card-icon card-icon--mono">&lt;C/&gt;</span>
+          </div>
+          <div class="card-badge card-badge--free">FREE</div>
+          <h3 class="card-title">C Programming</h3>
+          <p class="card-subtitle">Free Live Classes</p>
+          <p class="card-body">Complete C programming from ultimate basics to advanced level. Zero cost, maximum fire.
+            Taught by Naman Sharma himself.</p>
+          <a href="#" class="card-link">Join WhatsApp Group →</a>
+        </div>
+
+        <!-- Card 4: Python -->
+        <div class="program-card program-card--wide reveal" id="card-python">
+          <div class="card-icon-wrap">
+            <span class="card-icon">🐍</span>
+          </div>
+          <div class="card-badge card-badge--free">FREE</div>
+          <h3 class="card-title">Python Programming</h3>
+          <p class="card-subtitle">Free Live Classes</p>
+          <p class="card-body">Python from scratch to advanced — because the future speaks Python. Taught by Divyanshu
+            Khandelwal (DK), Co-Founder.</p>
+          <a href="#" class="card-link">Join WhatsApp Group →</a>
+        </div>
+
+        <!-- Card 5: Workshops -->
+        <div class="program-card program-card--wide reveal" id="card-workshops">
+          <div class="card-icon-wrap">
+            <span class="card-icon">🎓</span>
+          </div>
+          <div class="card-badge card-badge--live">LIVE</div>
+          <h3 class="card-title">Campus Workshops</h3>
+          <p class="card-subtitle">Angaar Across India</p>
+          <p class="card-body">We've set campuses on fire at IIT Delhi, DTU, NSUT, GLA, GL Bajaj, Microsoft Gurugram and
+            50+ more institutions. Hands-on, high-energy, unforgettable.</p>
+          <div class="card-stats-row">
+            <span class="mini-stat">50+ Colleges</span>
+            <span class="mini-stat">10+ Cities</span>
+          </div>
+          <a href="#contact" class="card-link">Bring Angaar to Your Campus →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= COURSES SECTION ======= -->
+  <section id="courses" class="section courses-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">CURRICULUM</span>
+        <h2 class="section-title">Paths of Fire</h2>
+        <p class="section-subtitle">Choose your flame. We'll fan it.</p>
+      </div>
+
+      <!-- Tab Switcher -->
+      <div class="tabs-wrapper reveal">
+        <div class="tabs-bar" id="tabs-bar">
+          <button class="tab-btn active" data-tab="c" id="tab-c">C PROGRAMMING</button>
+          <button class="tab-btn" data-tab="python" id="tab-python">PYTHON</button>
+          <button class="tab-btn" data-tab="java" id="tab-java">JAVA + DSA</button>
+          <button class="tab-btn" data-tab="fullstack" id="tab-fullstack">FULL STACK + GENAI</button>
+          <button class="tab-btn" data-tab="flames" id="tab-flames">FLAMES '25</button>
+          <div class="tab-indicator" id="tab-indicator"></div>
+        </div>
+      </div>
+
+      <!-- Course Cards -->
+      <div class="course-panels">
+
+        <!-- C Programming Panel -->
+        <div class="course-panel active" id="panel-c">
+          <div class="course-info">
+            <h3 class="course-title">C Programming</h3>
+            <div class="course-instructor">
+              <div class="instructor-avatar" style="background: linear-gradient(135deg, #FF6B1A, #FFB347);">NS</div>
+              <div>
+                <div class="instructor-name">Naman Sharma</div>
+                <div class="instructor-role">Founder & Educator</div>
+              </div>
+            </div>
+            <div class="course-price-badge free-badge">FREE</div>
+            <p class="course-desc">Complete C programming from ultimate basics to advanced level. Build a real Student
+              Record System. Zero cost, maximum fire. Perfect for absolute beginners.</p>
+            <a href="#" class="btn btn-primary course-enroll-btn" id="enroll-c">Join Free Class</a>
+          </div>
+          <div class="burning-scroll" id="scroll-c">
+            <div class="scroll-spine" id="spine-c"></div>
+            <div class="scroll-items" id="items-c">
+              <div class="scroll-item" data-tag="Concept">Introduction to Programming & C Language</div>
+              <div class="scroll-item" data-tag="Concept">Variables, Data Types, and Operators</div>
+              <div class="scroll-item" data-tag="Concept">Control Flow: if/else, switch, loops</div>
+              <div class="scroll-item" data-tag="Concept">Functions and Recursion</div>
+              <div class="scroll-item" data-tag="Concept">Arrays and Strings</div>
+              <div class="scroll-item" data-tag="Concept">Pointers and Memory Management</div>
+              <div class="scroll-item" data-tag="Concept">Structures and Unions</div>
+              <div class="scroll-item" data-tag="Concept">File Handling in C</div>
+              <div class="scroll-item" data-tag="Concept">Dynamic Memory Allocation (malloc, calloc, free)</div>
+              <div class="scroll-item" data-tag="Concept">Bitwise Operations</div>
+              <div class="scroll-item" data-tag="Project">Build a Student Record System in C</div>
+              <div class="scroll-item" data-tag="Assessment">Final Assessment + Certificate</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Python Panel -->
+        <div class="course-panel" id="panel-python">
+          <div class="course-info">
+            <h3 class="course-title">Python Programming</h3>
+            <div class="course-instructor">
+              <div class="instructor-avatar" style="background: linear-gradient(135deg, #3a7bd5, #00d2ff);">DK</div>
+              <div>
+                <div class="instructor-name">Divyanshu Khandelwal</div>
+                <div class="instructor-role">Co-Founder & Educator</div>
+              </div>
+            </div>
+            <div class="course-price-badge free-badge">FREE</div>
+            <p class="course-desc">Python from scratch to advanced — because the future speaks Python. Build real data
+              dashboards. Taught by DK himself, with love and fire.</p>
+            <a href="#" class="btn btn-primary course-enroll-btn" id="enroll-python">Join Free Class</a>
+          </div>
+          <div class="burning-scroll" id="scroll-python">
+            <div class="scroll-spine" id="spine-python"></div>
+            <div class="scroll-items" id="items-python">
+              <div class="scroll-item" data-tag="Concept">Python Basics: Syntax, Variables, I/O</div>
+              <div class="scroll-item" data-tag="Concept">Conditionals and Loops</div>
+              <div class="scroll-item" data-tag="Concept">Functions, Scope, and Lambda</div>
+              <div class="scroll-item" data-tag="Concept">Lists, Tuples, Sets, Dictionaries</div>
+              <div class="scroll-item" data-tag="Concept">String Manipulation Deep Dive</div>
+              <div class="scroll-item" data-tag="Concept">File Handling and Exceptions</div>
+              <div class="scroll-item" data-tag="Concept">Object-Oriented Programming in Python</div>
+              <div class="scroll-item" data-tag="Concept">Modules and Packages</div>
+              <div class="scroll-item" data-tag="Workshop">Working with APIs (requests library)</div>
+              <div class="scroll-item" data-tag="Workshop">Data Analysis Intro with Pandas</div>
+              <div class="scroll-item" data-tag="Workshop">Web Scraping Basics with BeautifulSoup</div>
+              <div class="scroll-item" data-tag="Project">Build a Data Dashboard</div>
+              <div class="scroll-item" data-tag="Assessment">Final Assessment + Certificate</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Java + DSA Panel -->
+        <div class="course-panel" id="panel-java">
+          <div class="course-info">
+            <h3 class="course-title">Java + DSA</h3>
+            <div class="course-instructor">
+              <div class="instructor-avatar" style="background: linear-gradient(135deg, #FF6B1A, #c0392b);">AM</div>
+              <div>
+                <div class="instructor-name">Angaar Mentors</div>
+                <div class="instructor-role">FLARE 1.0 Program</div>
+              </div>
+            </div>
+            <div class="course-price-badge paid-badge">₹1,999</div>
+            <p class="course-desc">Industry-vetted Java & DSA roadmap with 150+ curated problems, mock interviews, and a
+              capstone portfolio project. Job-ready in months.</p>
+            <a href="#" class="btn btn-primary course-enroll-btn" id="enroll-java">Enroll Now</a>
+          </div>
+          <div class="burning-scroll" id="scroll-java">
+            <div class="scroll-spine" id="spine-java"></div>
+            <div class="scroll-items" id="items-java">
+              <div class="scroll-item" data-tag="Concept">Core Java: Syntax, OOP, Classes, Inheritance</div>
+              <div class="scroll-item" data-tag="Concept">Advanced OOP: Abstract, Interfaces, Generics</div>
+              <div class="scroll-item" data-tag="Concept">Exception Handling and Collections Framework</div>
+              <div class="scroll-item" data-tag="Concept">Java 8+ Features (Streams, Lambda, Optional)</div>
+              <div class="scroll-item" data-tag="Concept">Time & Space Complexity Analysis</div>
+              <div class="scroll-item" data-tag="Concept">Arrays, Strings, and Hashing Problems</div>
+              <div class="scroll-item" data-tag="Concept">Linked Lists: Singly, Doubly, Circular</div>
+              <div class="scroll-item" data-tag="Concept">Stacks, Queues, and Dequeues</div>
+              <div class="scroll-item" data-tag="Concept">Trees: Binary, BST, AVL, Segment Trees</div>
+              <div class="scroll-item" data-tag="Concept">Graphs: BFS, DFS, Dijkstra, Topological Sort</div>
+              <div class="scroll-item" data-tag="Concept">Dynamic Programming Patterns (50+ problems)</div>
+              <div class="scroll-item" data-tag="Concept">Sliding Window, Two Pointers, Backtracking</div>
+              <div class="scroll-item" data-tag="Workshop">150+ Curated Interview Problems</div>
+              <div class="scroll-item" data-tag="Workshop">Mock Interviews + Resume Review</div>
+              <div class="scroll-item" data-tag="Project">Capstone Project Portfolio</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full Stack + GenAI Panel -->
+        <div class="course-panel" id="panel-fullstack">
+          <div class="course-info">
+            <h3 class="course-title">Full Stack + GenAI</h3>
+            <div class="course-instructor">
+              <div class="instructor-avatar" style="background: linear-gradient(135deg, #6c3483, #a569bd);">AM</div>
+              <div>
+                <div class="instructor-name">Angaar Mentors</div>
+                <div class="instructor-role">FLARE 1.0 Program</div>
+              </div>
+            </div>
+            <div class="course-price-badge paid-badge">₹1,999</div>
+            <p class="course-desc">Master React, Django, and integrate real AI into your apps. Build a full-stack
+              AI-powered web application as your capstone. The future is now.</p>
+            <a href="#" class="btn btn-primary course-enroll-btn" id="enroll-fullstack">Enroll Now</a>
+          </div>
+          <div class="burning-scroll" id="scroll-fullstack">
+            <div class="scroll-spine" id="spine-fullstack"></div>
+            <div class="scroll-items" id="items-fullstack">
+              <div class="scroll-item" data-tag="Concept">HTML5 + CSS3 Mastery</div>
+              <div class="scroll-item" data-tag="Concept">JavaScript ES6+: Promises, Async/Await</div>
+              <div class="scroll-item" data-tag="Concept">React.js: Components, Hooks, State Management</div>
+              <div class="scroll-item" data-tag="Concept">Django Framework: Models, Views, URLs</div>
+              <div class="scroll-item" data-tag="Concept">REST API Design with Django REST Framework</div>
+              <div class="scroll-item" data-tag="Concept">SQL Databases: PostgreSQL Design & Queries</div>
+              <div class="scroll-item" data-tag="Concept">NoSQL with MongoDB</div>
+              <div class="scroll-item" data-tag="Concept">Authentication: JWT, Sessions, OAuth</div>
+              <div class="scroll-item" data-tag="Workshop">ChatGPT API & LLM Integration</div>
+              <div class="scroll-item" data-tag="Workshop">Building AI-Powered Web Features</div>
+              <div class="scroll-item" data-tag="Workshop">WebApp Deployment: AWS/Render/Railway</div>
+              <div class="scroll-item" data-tag="Workshop">Docker Basics and DevOps Intro</div>
+              <div class="scroll-item" data-tag="Project">Capstone: Full Stack AI Web Application</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FLAMES '25 Panel -->
+        <div class="course-panel" id="panel-flames">
+          <div class="course-info">
+            <h3 class="course-title">FLAMES '25</h3>
+            <div class="course-instructor">
+              <div class="instructor-avatar" style="background: linear-gradient(135deg, #FF6B1A, #FFD700);">🔥</div>
+              <div>
+                <div class="instructor-name">Angaar Core Team</div>
+                <div class="instructor-role">Completed Cohort</div>
+              </div>
+            </div>
+            <div class="course-price-badge completed-badge">3 MONTHS</div>
+            <p class="course-desc">The iconic first summer batch — 400+ students, 40+ projects, 4.8/5 rating. A
+              completed cohort that proved the Angaar model works. Your batch comes next.</p>
+            <a href="#" class="btn btn-outline course-enroll-btn" id="enroll-flames">View Alumni Network</a>
+          </div>
+          <div class="burning-scroll" id="scroll-flames">
+            <div class="scroll-spine" id="spine-flames"></div>
+            <div class="scroll-items" id="items-flames">
+              <div class="scroll-item" data-tag="Workshop">Orientation & Team Formation</div>
+              <div class="scroll-item" data-tag="Concept">Git, GitHub, and Collaboration Workflows</div>
+              <div class="scroll-item" data-tag="Concept">Web Fundamentals: HTML, CSS, JavaScript</div>
+              <div class="scroll-item" data-tag="Concept">Python for Web Development</div>
+              <div class="scroll-item" data-tag="Concept">Django Backend Development</div>
+              <div class="scroll-item" data-tag="Concept">Database Design and Integration</div>
+              <div class="scroll-item" data-tag="Workshop">Frontend: Building Interactive UIs</div>
+              <div class="scroll-item" data-tag="Workshop">API Development and Integration</div>
+              <div class="scroll-item" data-tag="Project">Team Project Kickoff (40+ teams)</div>
+              <div class="scroll-item" data-tag="Workshop">Agile Methodology & Sprint Planning</div>
+              <div class="scroll-item" data-tag="Project">Project Development Sprints (6 weeks)</div>
+              <div class="scroll-item" data-tag="Workshop">Testing, Debugging, Deployment</div>
+              <div class="scroll-item" data-tag="Project">Final Project Presentations</div>
+              <div class="scroll-item" data-tag="Assessment">Certificate Distribution & Recognition</div>
+              <div class="scroll-item" data-tag="Workshop">FLAMES Alumni Network Access</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= JOURNEY / MILESTONES ======= -->
+  <section id="journey" class="section journey-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">OUR STORY</span>
+        <h2 class="section-title">The Angaar Story</h2>
+        <p class="section-subtitle">From a spark to a wildfire</p>
+      </div>
+      <div class="timeline-wrapper reveal">
+        <div class="timeline-line"></div>
+        <div class="timeline-items">
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <svg width="20" height="24" viewBox="0 0 20 28" fill="none" class="tl-flame">
+                <path d="M10 2C10 2 4 9 4 15C4 18.866 6.686 22.5 10 23.5C13.314 22.5 16 18.866 16 15C16 9 10 2 10 2Z"
+                  fill="#FF6B1A" />
+                <path d="M10 9C10 9 7 13 7 16C7 18.485 8.343 20.5 10 21C11.657 20.5 13 18.485 13 16C13 13 10 9 10 9Z"
+                  fill="#FFD700" />
+              </svg>
+            </div>
+            <div class="timeline-card tl-above">
+              <div class="tl-year">2023</div>
+              <p class="tl-desc">Founded with a vision to transform tech education in India. One spark, infinite
+                possibilities.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <svg width="20" height="24" viewBox="0 0 20 28" fill="none" class="tl-flame">
+                <path d="M10 2C10 2 4 9 4 15C4 18.866 6.686 22.5 10 23.5C13.314 22.5 16 18.866 16 15C16 9 10 2 10 2Z"
+                  fill="#FF6B1A" />
+                <path d="M10 9C10 9 7 13 7 16C7 18.485 8.343 20.5 10 21C11.657 20.5 13 18.485 13 16C13 13 10 9 10 9Z"
+                  fill="#FFD700" />
+              </svg>
+            </div>
+            <div class="timeline-card tl-below">
+              <div class="tl-year">Early 2024</div>
+              <p class="tl-desc">Launched the first batch — 100 students caught fire. The spark became a flame.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <svg width="20" height="24" viewBox="0 0 20 28" fill="none" class="tl-flame">
+                <path d="M10 2C10 2 4 9 4 15C4 18.866 6.686 22.5 10 23.5C13.314 22.5 16 18.866 16 15C16 9 10 2 10 2Z"
+                  fill="#FF6B1A" />
+                <path d="M10 9C10 9 7 13 7 16C7 18.485 8.343 20.5 10 21C11.657 20.5 13 18.485 13 16C13 13 10 9 10 9Z"
+                  fill="#FFD700" />
+              </svg>
+            </div>
+            <div class="timeline-card tl-above">
+              <div class="tl-year">Mid 2024</div>
+              <p class="tl-desc">Expanded to multiple tech domains and cities across India. Campus tours ignited DTU,
+                NSUT, GLA and beyond.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <svg width="20" height="24" viewBox="0 0 20 28" fill="none" class="tl-flame">
+                <path d="M10 2C10 2 4 9 4 15C4 18.866 6.686 22.5 10 23.5C13.314 22.5 16 18.866 16 15C16 9 10 2 10 2Z"
+                  fill="#FF6B1A" />
+                <path d="M10 9C10 9 7 13 7 16C7 18.485 8.343 20.5 10 21C11.657 20.5 13 18.485 13 16C13 13 10 9 10 9Z"
+                  fill="#FFD700" />
+              </svg>
+            </div>
+            <div class="timeline-card tl-below">
+              <div class="tl-year">2025</div>
+              <p class="tl-desc">13,000+ students strong. FLAMES '25 completed with 400+ students and 40+ projects.
+                FLARE 1.0 launched.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot tl-dot-active">
+              <svg width="20" height="24" viewBox="0 0 20 28" fill="none" class="tl-flame">
+                <path d="M10 2C10 2 4 9 4 15C4 18.866 6.686 22.5 10 23.5C13.314 22.5 16 18.866 16 15C16 9 10 2 10 2Z"
+                  fill="#FFD700" />
+                <path d="M10 9C10 9 7 13 7 16C7 18.485 8.343 20.5 10 21C11.657 20.5 13 18.485 13 16C13 13 10 9 10 9Z"
+                  fill="white" />
+              </svg>
+            </div>
+            <div class="timeline-card tl-above tl-card-active">
+              <div class="tl-year">Now 🔥</div>
+              <p class="tl-desc">Your story starts here. Don't just watch the fire — become it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= TEAM SECTION ======= -->
+  <section id="team" class="section team-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">THE PEOPLE</span>
+        <h2 class="section-title">The Angaari Aawam</h2>
+        <p class="section-subtitle">The people who keep the fire burning</p>
+      </div>
+
+      <!-- Founders Row -->
+      <div class="founders-row reveal">
+        <div class="founder-card" id="founder-naman">
+          <div class="founder-avatar-wrap">
+            <div class="founder-avatar" style="background: linear-gradient(135deg, #FF6B1A 0%, #FFD700 100%);">NS</div>
+          </div>
+          <h3 class="founder-name">Naman Sharma</h3>
+          <p class="founder-role">Founder & Educator</p>
+          <p class="founder-desc">The spark that started it all. Teaches C Programming with a fire that's contagious.
+          </p>
+        </div>
+        <div class="founder-card" id="founder-dk">
+          <div class="founder-avatar-wrap">
+            <div class="founder-avatar" style="background: linear-gradient(135deg, #3a7bd5 0%, #00d2ff 100%);">DK</div>
+          </div>
+          <h3 class="founder-name">Divyanshu Khandelwal</h3>
+          <p class="founder-role">Co-Founder & Educator</p>
+          <p class="founder-desc">DK makes Python feel like poetry. The co-architect of the Angaar dream.</p>
+        </div>
+        <div class="founder-card" id="founder-piyush">
+          <div class="founder-avatar-wrap">
+            <div class="founder-avatar" style="background: linear-gradient(135deg, #6c3483 0%, #a569bd 100%);">PK</div>
+          </div>
+          <h3 class="founder-name">Piyush Khandelwal</h3>
+          <p class="founder-role">Advisor & Director @W3Grads</p>
+          <p class="founder-desc">The strategic mind guiding the flame. Director at W3Grads powering Angaar's reach.</p>
+        </div>
+      </div>
+
+      <!-- Core Team -->
+      <div class="team-sub-header reveal">
+        <h3 class="team-row-title">Core Team</h3>
+      </div>
+      <div class="core-team-row reveal">
+        <div class="team-card" id="team-gaurika">
+          <div class="team-avatar" style="background: linear-gradient(135deg, #e91e8c, #ff6b6b);">GD</div>
+          <div class="team-info">
+            <h4 class="team-name">Gaurika Dhingra</h4>
+            <p class="team-role">Operations Head</p>
+          </div>
+        </div>
+        <div class="team-card" id="team-nistha">
+          <div class="team-avatar" style="background: linear-gradient(135deg, #11998e, #38ef7d);">NB</div>
+          <div class="team-info">
+            <h4 class="team-name">Nistha Bhura</h4>
+            <p class="team-role">Outreach Manager</p>
+          </div>
+        </div>
+        <div class="team-card" id="team-mukund">
+          <div class="team-avatar" style="background: linear-gradient(135deg, #f7971e, #ffd200);">MJ</div>
+          <div class="team-info">
+            <h4 class="team-name">Mukund Johari</h4>
+            <p class="team-role">Operations Coordinator</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Outreach Associates -->
+      <div class="team-sub-header reveal">
+        <h3 class="team-row-title">Outreach Associates</h3>
+      </div>
+      <div class="associates-grid reveal">
+        <div class="associate-card" id="assoc-mradul">
+          <div class="assoc-avatar" style="background: linear-gradient(135deg, #FF6B1A, #c0392b);">MK</div>
+          <div class="assoc-info">
+            <span class="assoc-name">Mradul Khandelwal</span>
+            <span class="assoc-desc">"The fire starter"</span>
+          </div>
+        </div>
+        <div class="associate-card" id="assoc-shubh">
+          <div class="assoc-avatar" style="background: linear-gradient(135deg, #3498db, #2980b9);">SV</div>
+          <div class="assoc-info">
+            <span class="assoc-name">Shubh Verma</span>
+            <span class="assoc-desc">"The network wizard"</span>
+          </div>
+        </div>
+        <div class="associate-card" id="assoc-deepanshu">
+          <div class="assoc-avatar" style="background: linear-gradient(135deg, #27ae60, #2ecc71);">DK</div>
+          <div class="assoc-info">
+            <span class="assoc-name">Deepanshu Kashyap</span>
+            <span class="assoc-desc">"Campus connect pro"</span>
+          </div>
+        </div>
+        <div class="associate-card" id="assoc-dev">
+          <div class="assoc-avatar" style="background: linear-gradient(135deg, #8e44ad, #9b59b6);">DS</div>
+          <div class="assoc-info">
+            <span class="assoc-name">Dev Shukla</span>
+            <span class="assoc-desc">"The quiet storm"</span>
+          </div>
+        </div>
+        <div class="associate-card" id="assoc-anurodh">
+          <div class="assoc-avatar" style="background: linear-gradient(135deg, #e67e22, #d35400);">AM</div>
+          <div class="assoc-info">
+            <span class="assoc-name">Anurodh Mishra</span>
+            <span class="assoc-desc">"Bhaiya ek idea hai"</span>
+          </div>
+        </div>
+        <div class="associate-card" id="assoc-akhil">
+          <div class="assoc-avatar" style="background: linear-gradient(135deg, #16a085, #1abc9c);">AS</div>
+          <div class="assoc-info">
+            <span class="assoc-name">Akhil Pratap Singh</span>
+            <span class="assoc-desc">"The execution machine"</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= TESTIMONIALS ======= -->
+  <section id="testimonials" class="section testimonials-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">STUDENT VOICES</span>
+        <h2 class="section-title">Words from the Flame</h2>
+        <p class="section-subtitle">Real students. Real fire.</p>
+      </div>
+    </div>
+    <div class="marquee-wrapper reveal">
+      <!-- Row 1: left -->
+      <div class="marquee-row marquee-left" id="marquee-row-1">
+        <div class="marquee-track" id="marquee-track-1">
+          <div class="testimonial-card">
+            <div class="testi-header">
+              <div class="testi-avatar" style="background: linear-gradient(135deg, #FF6B1A, #FFB347);">PS</div>
+              <div>
+                <div class="testi-name">Priya Sharma</div>
+                <div class="testi-college">IT 2nd Year</div>
+              </div>
+              <div class="testi-rating">🔥🔥🔥🔥🔥</div>
+            </div>
+            <p class="testi-quote">"The community support was unreal. My project got recognized at the final showcase
+              and it literally changed my college life. Angaar is not just a course — it's a movement."</p>
+          </div>
+          <div class="testimonial-card">
+            <div class="testi-header">
+              <div class="testi-avatar" style="background: linear-gradient(135deg, #e91e8c, #ff6b6b);">NS</div>
+              <div>
+                <div class="testi-name">Niharika Singh</div>
+                <div class="testi-college">CS 2nd Year, IGDTUW</div>
+              </div>
+              <div class="testi-rating">🔥🔥🔥🔥🔥</div>
+            </div>
+            <p class="testi-quote">"DK sir and Naman sir bring industry knowledge that you just don't get in college. I
+              developed leadership skills here that landed me a core team role in my college's tech fest."</p>
+          </div>
+          <div class="testimonial-card">
+            <div class="testi-header">
+              <div class="testi-avatar" style="background: linear-gradient(135deg, #2980b9, #6dd5fa);">FK</div>
+              <div>
+                <div class="testi-name">Faraz Ahmad Khan</div>
+                <div class="testi-college">CS 3rd Year</div>
+              </div>
+              <div class="testi-rating">🔥🔥🔥🔥🔥</div>
+            </div>
+            <p class="testi-quote">"The data analysis module was so practical. The faculty is incredibly supportive and
+              never makes you feel behind. I went from zero Python to building dashboards in 6 weeks."</p>
+          </div>
+          <div class="testimonial-card">
+            <div class="testi-header">
+              <div class="testi-avatar" style="background: linear-gradient(135deg, #11998e, #38ef7d);">NK</div>
+              <div>
+                <div class="testi-name">Neha Kapoor</div>
+                <div class="testi-college">Computer Applications 1st Year</div>
+              </div>
+              <div class="testi-rating">🔥🔥🔥🔥🔥</div>
+            </div>
+            <p class="testi-quote">"I built my first full-stack app here. FIRST YEAR! My seniors couldn't believe it.
+              The hands-on approach is brutal in the best possible way. Highly recommend."</p>
+          </div>
+        </div>
+      </div>
+      <!-- Row 2: right -->
+      <div class="marquee-row marquee-right" id="marquee-row-2">
+        <div class="marquee-track" id="marquee-track-2">
+          <div class="testimonial-card">
+            <div class="testi-header">
+              <div class="testi-avatar" style="background: linear-gradient(135deg, #f7971e, #ffd200);">AM</div>
+              <div>
+                <div class="testi-name">Aditya Mishra</div>
+                <div class="testi-college">CS 3rd Year</div>
+              </div>
+              <div class="testi-rating">🔥🔥🔥🔥🔥</div>
+            </div>
+            <p class="testi-quote">"Got my first internship right after completing the FLARE 1.0 course. The DSA prep
+              and mock interviews were exactly what companies look for. This program is the real deal."</p>
+          </div>
+          <div class="testimonial-card">
+            <div class="testi-header">
+              <div class="testi-avatar" style="background: linear-gradient(135deg, #8e44ad, #9b59b6);">AK</div>
+              <div>
+                <div class="testi-name">Arjun Kumar</div>
+                <div class="testi-college">CS 3rd Year</div>
+              </div>
+              <div class="testi-rating">🔥🔥🔥🔥🔥</div>
+            </div>
+            <p class="testi-quote">"Game changer. The hands-on approach means you always know WHY you're doing what
+              you're doing — not just copy-pasting code. My problem-solving approach completely transformed."</p>
+          </div>
+          <div class="testimonial-card">
+            <div class="testi-header">
+              <div class="testi-avatar" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">RG</div>
+              <div>
+                <div class="testi-name">Rohit Gupta</div>
+                <div class="testi-college">Software Engineering 3rd Year</div>
+              </div>
+              <div class="testi-rating">🔥🔥🔥🔥🔥</div>
+            </div>
+            <p class="testi-quote">"Angaar made me think like a developer, not just a student. The difference is
+              everything. After FLAMES '25, I don't just write code — I architect solutions."</p>
+          </div>
+          <div class="testimonial-card">
+            <div class="testi-header">
+              <div class="testi-avatar" style="background: linear-gradient(135deg, #16a085, #1abc9c);">SR</div>
+              <div>
+                <div class="testi-name">Shreya Rawat</div>
+                <div class="testi-college">ECE 2nd Year, DTU</div>
+              </div>
+              <div class="testi-rating">🔥🔥🔥🔥🔥</div>
+            </div>
+            <p class="testi-quote">"Coming from a non-CSE background, I was terrified. But Angaar made it feel possible.
+              Naman sir's teaching style is unlike anything I'd seen — raw, real, and results-driven."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= CTA SECTION ======= -->
+  <section id="contact" class="cta-section">
+    <div class="cta-glow"></div>
+    <div class="container">
+      <div class="cta-content reveal">
+        <h2 class="cta-title">Ready to Burn?</h2>
+        <p class="cta-sub">Join thousands of students who chose to ignite their future.</p>
+        <div class="cta-buttons">
+          <a href="#courses" class="btn btn-primary btn-lg" id="cta-btn-courses">Explore Courses</a>
+          <a href="#" class="btn btn-outline btn-lg" id="cta-btn-whatsapp">Join Free WhatsApp Class</a>
+        </div>
+        <div class="cta-contact">
+          <a href="mailto:team@theangaarbatch.in" class="cta-contact-link" id="cta-email">✉ team@theangaarbatch.in</a>
+          <span class="cta-divider">|</span>
+          <a href="tel:+918273619318" class="cta-contact-link" id="cta-phone">📞 +91 82736 19318</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">🔥 ANGAAR</div>
+        <p class="footer-tagline">"Agar Angaar hai tere houslo me, to bas dekhke mat ja... Seekh... or laga de...
+          ANGAAR🔥"</p>
+        <p class="footer-powered">Powered by <strong>W3Grads</strong></p>
+      </div>
+      <div class="footer-right">
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <a href="#about" class="footer-link">Programs</a>
+          <a href="#courses" class="footer-link">Courses</a>
+          <a href="#team" class="footer-link">Team</a>
+          <a href="#journey" class="footer-link">Our Story</a>
+        </div>
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Contact</h4>
+          <a href="mailto:team@theangaarbatch.in" class="footer-link">team@theangaarbatch.in</a>
+          <a href="tel:+918273619318" class="footer-link">+91 82736 19318</a>
+          <a href="#" class="footer-link">theangaarbatch.in</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <span>© 2025 The Angaar Batch 🔥 | Powered by W3Grads</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
